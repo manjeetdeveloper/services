@@ -1,16 +1,25 @@
 import { Component } from '@angular/core';
-import {UserDataService} from './services/user-data.service'
+import { UserDataService } from './services/user-data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Service';
-  users:any;
-  constructor(private  userdata:UserDataService)
-  {
-    console.warn("userdata",userdata.users())
-    this.users=userdata.users();
+  title = 'Service in Angular';
+  users: any;
+  constructor(private userData: UserDataService) {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.userData.users().subscribe(
+      (data) => {
+        console.warn('data', data);
+        this.users = data;
+      },
+
+    );
   }
 }

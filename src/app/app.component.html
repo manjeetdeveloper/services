@@ -1,9 +1,10 @@
 <h1>{{title}}</h1>
-<ul>
-  <li *ngFor="let user of users">
-    {{user.name}} : {{user.age}}
 
+<ul>
+  <li *ngFor="let user of users ">
+    {{user.name}} --- {{user.email}}
   </li>
 </ul>
+
 
 <app-footer></app-footer>

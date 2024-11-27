@@ -7,7 +7,7 @@ import { UserDataService } from './services/user-data.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Service in Angular';
+  title = 'GetAPi in Angular';
   users: any;
   constructor(private userData: UserDataService) {
     this.loadUsers();
